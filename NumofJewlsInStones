@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        unordered_map<char,int> m;
+        int n=stones.size();
+        for(int i=0;i<n;i++){
+            m[stones[i]]++;
+        }
+        int ans=0;
+        for(auto ch:jewels){
+            ans=ans+m[ch];
+        }
+        return ans;
+    }
+};
